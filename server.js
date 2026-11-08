@@ -24,6 +24,13 @@ app.post("/users", function (req, res) {
     });
 });
 
+app.post("/users/:userID/delete", function (req, res) {
+    const userID = req.params.userID;
+    userDB.deleteUser(userID, function (data) {
+        console.log(data);
+        res.redirect("/");
+    });
+});
 
 app.listen(PORT, function () {
     console.log(`Listening on Port: ${PORT}`);

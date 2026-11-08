@@ -64,12 +64,16 @@
                                     <%= user.username %>
                                 </td>
                                 <td>
-                                    <form action="/items/<%= user.userID %>/delete" 
+                                    <form 
+                                        action="/users/<%= user.userID %>/delete" 
                                         method="POST" 
                                         style="display:inline;"
-                                        onsubmit="return confirm('Are you sure you want to delete item: <%= user.userID %>?');">
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        onsubmit="return confirm('Are you sure you want to delete user: <%= user.fname %> <%= user.lname %>?');"
+                                    >
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
                                 </td>
+
                             </tr>
                             <% }); %>
                     </tbody>
